@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My Tasks
+{% endblock %}
+
+{% block content %}
+        <p><a href="/">HOME</a></p>
+
+        <h1>Tasks</h1>
+        {% for x in myTasks %}
+        <li>{{x.taskName}}</li>
+        {% endfor %}
+
+{% endblock %}
