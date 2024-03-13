@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "master.html" %}
 
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
+{% block title %}
+  My Tennis Club
+{% endblock %}
 
-</body>
-</html>
+
+{% block content %}
+  <h1>My  tasks</h1>
+
+  
+  
+  <p>Check out your <a href="tasks/">tasks</a></p>
+  
+{% endblock %}
