@@ -1,0 +1,23 @@
+
+
+<h1>Add task</h1>
+
+<form action="{% url 'addtask' %}" method="post">
+    {% csrf_token %}
+Task name:<br>
+<input name="taskName">
+<br><br>
+Description:<br>
+<input name="description">
+<br><br>
+Due Date:<br>
+<input name="due_date">
+<br><br>
+Priority:<br>
+<input name="priority">
+<br><br>
+Status:<br>
+<input name="status">
+<br><br>
+<input type="submit" value="Submit">
+</form>

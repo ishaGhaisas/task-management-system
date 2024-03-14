@@ -7,9 +7,45 @@
 {% block content %}
         <p><a href="/">HOME</a></p>
 
-        <h1>Tasks</h1>
-        {% for x in myTasks %}
-        <li>{{x.taskName}}</li>
-        {% endfor %}
+        <section>
+            <h1 class="title">To Do</h1>
+
+        </section>
+        <section>
+            <table class="table table-bordered ">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Created at</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for x in myTasks %}
+                    
+                    <tr>
+                        <th scope="row">{{forloop.counter}}</th>
+                        <td>{{ x.taskName }}</td>
+                        <td>{{x.description}}</td>
+                        <td>{{x.create_at}}</td>
+                        <td>{{x.due_date}}</td>
+                        <td>{{x.priority}}</td>
+                        <td>{{x.status}}</td>
+                        <td><button><a href="{% url 'delete' x.id %}">delete</a></button> <button>update</button></td>
+
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <button><a href="{% url 'add'%}">add</a></button>
+        </section>
 
 {% endblock %}
