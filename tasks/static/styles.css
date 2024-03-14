@@ -1,4 +1,20 @@
-body {
+body{
     background-color: #0D3B66;
-    font-family: verdana;
-  }
+}
+
+.table th,
+    .table td {
+        color: #FAF0CA;
+    }
+
+.table{
+    margin: 10px;
+    margin-top: 50px;
+}
+
+.title{
+    margin-left: 100px;
+    margin-top: 50px;
+    text-align: center;
+    color: #FAF0CA;
+}
