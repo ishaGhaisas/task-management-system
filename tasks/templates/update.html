@@ -1,0 +1,34 @@
+
+
+<h1>Update task</h1>
+
+<form action="{% url 'updateTask' task.id %}" method="post">
+    {% csrf_token %}
+Task name:<br>
+<input name="taskName" value ="{{task.taskName}}">
+<br><br>
+Description:<br>
+<input name="description" value ="{{task.description}}">
+<br><br>
+Due Date:<br>
+<input name="due_date" value ="{{task.due_date}}">
+<br><br>
+Priority:<br>
+<select name="priority" id="priority" value ="{{task.priority}}">
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+<br><br>
+
+Status:<br>
+<select name="status" id="status"  value ="{{task.status}}">>
+    <option value="in_progress">In Progress</option>
+    <option value="to-do">To Do</option>
+    <option value="completed">Completed</option>
+    <option value="blocked">Blocked</option>
+  </select>
+
+<br><br>
+<input type="submit" value="Submit">
+</form>

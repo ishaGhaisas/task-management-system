@@ -18,3 +18,11 @@ body{
     text-align: center;
     color: #FAF0CA;
 }
+
+.btn{
+    color: #F4D35E;
+}
+
+.btn:hover{
+    color: #FAF0CA;
+}
