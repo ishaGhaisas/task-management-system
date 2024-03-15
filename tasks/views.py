@@ -38,3 +38,27 @@ def addtask(request):
   task = Tasks(taskName=taskName, description=description, due_date=due_date, priority=priority, status=status)
   task.save()
   return HttpResponseRedirect(reverse('tasks'))
+
+def update(request, id):
+  task = Tasks.objects.get(id=id)
+  template = loader.get_template('update.html')
+  context = {
+    'task': task,
+  }
+  return HttpResponse(template.render(context, request))
+
+def updateTask(request, id):
+  taskName = request.POST['taskName']
+  description = request.POST['description']
+  due_date = request.POST['due_date']
+  priority = request.POST['priority']
+  status = request.POST['status']
+  task = Tasks.objects.get(id=id)
+  task.taskName = taskName
+  task.description = description
+  task.due_date = due_date
+  task.priority = priority
+  task.status = status
+  task.save()
+  return HttpResponseRedirect(reverse('tasks'))
+
