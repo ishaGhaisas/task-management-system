@@ -1,32 +1,41 @@
 
+{% extends "master.html" %}
 
-<h1>Add task</h1>
-
-<form action="{% url 'addtask' %}" method="post">
-    {% csrf_token %}
-Task name:<br>
-<input name="taskName">
-<br><br>
-Description:<br>
-<input name="description">
-<br><br>
-Due Date:<br>
-<input name="due_date">
-<br><br>
-Priority:<br>
-<select name="priority" id="priority">
-    <option value="Low">Low</option>
-    <option value="Medium">Medium</option>
-    <option value="High">High</option>
-  </select>
-<br><br>
-Status:<br>
-<select name="status" id="status">
-    <option value="In Progress">In Progress</option>
-    <option value="To Do">To Do</option>
-    <option value="Completed">Completed</option>
-    <option value="Blocked">Blocked</option>
-  </select>
-<br><br>
-<input type="submit" value="Submit">
-</form>
+{% block title %}
+ Add a task
+{% endblock %}
+{% block content %}
+<section>
+<h1 class= 'title'>Add task</h1>
+</section>
+<section class='form-ele'>
+  <form action="{% url 'addtask' %}" method="post">
+      {% csrf_token %}
+  Task name:<br>
+  <input name="taskName">
+  <br><br>
+  Description:<br>
+  <input name="description">
+  <br><br>
+  Due Date:<br>
+  <input name="due_date">
+  <br><br>
+  Priority:<br>
+  <select name="priority" id="priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  <br><br>
+  Status:<br>
+  <select name="status" id="status">
+      <option value="In Progress">In Progress</option>
+      <option value="To Do">To Do</option>
+      <option value="Completed">Completed</option>
+      <option value="Blocked">Blocked</option>
+    </select>
+  <br><br>
+  <input type="submit" value="Submit">
+  </form>
+</section>
+{% endblock %}
